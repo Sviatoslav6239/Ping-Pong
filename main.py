@@ -85,6 +85,7 @@ class Player(GameSprite):
             self.score = Score(WIDTH - WIDTH // 3, HEIGHT // 20)
         super().__init__(self.image_name, self.x, (HEIGHT - 150) // 2, self.width, self.width, 15)
 
+
     def update(self):
         keys_pressed = key.get_pressed()
         if self.player_number == 1:
