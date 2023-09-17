@@ -42,7 +42,7 @@ class Ball(GameSprite):
                 self.speed_x *= -1.1
                 self.rect.x = left_racket.rect.right
 
-            if ball.rect > WIDTH:
+            if ball.rect.x > WIDTH:
                 self.respawn()
                 self.update_score(left_racket.score)
 
@@ -96,8 +96,8 @@ class Player(GameSprite):
         if self.player_number == 2:
             if keys_pressed[K_UP] and self.rect.y >= 10:
                 self.rect.y -= self.speed
-                if keys_pressed[K_DOWN] and self.rect.y <= HEIGHT - self.rect.height - 10:
-                    self.rect.y += self.speed
+            if keys_pressed[K_DOWN] and self.rect.y <= HEIGHT - self.rect.height - 10:
+                self.rect.y += self.speed
 
 
 
